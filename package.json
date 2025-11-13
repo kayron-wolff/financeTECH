@@ -15,5 +15,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": "https://github.com/kayron-wolff/financeTECH",
+  "author": "kayron-wolff <gustavo.asus3@outlook.com>"
 }

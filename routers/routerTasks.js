@@ -3,10 +3,10 @@ import controllerTasks from '../controllers/controllerTasks.js';
 
 const router = express.Router();
 
-router.get('/', controllerTasks.allTasks);
-router.post('/', controllerTasks.createTask);
-router.put('/:id', controllerTasks.updtTask);
-router.delete('/:id', controllerTasks.delTask);
-router.get('/:id', controllerTasks.getTaskById);
+router.get('/main', controllerTasks.allBills);
+router.post('/add', controllerTasks.addBill);
+router.put('/updt/:id', controllerTasks.updtBill);
+router.delete('/delete/:id', controllerTasks.delBill);
+router.get('/search/:id', controllerTasks.getBillById);
 
 export default router;

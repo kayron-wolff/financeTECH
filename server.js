@@ -10,7 +10,7 @@ dotenv.config();
 app.use(express.static('views'));
 app.use(express.json());
 
-app.use('/tarefas', routerTasks);
+app.use('/home', routerTasks);
 
 app.get('/', (req, res)=>{
     res.send('Connection Set with views/index.html', {root: '.'});
