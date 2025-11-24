@@ -4,7 +4,7 @@
 }
 @font-face {
     font-family: 'cooperBlack';
-    src: url(f7onts/COOPBL.TTF) format('truetype');
+    src: url(fonts/COOPBL.TTF) format('truetype');
 }
 @font-face {
     font-family: 'harlowSolidItalic';
@@ -13,6 +13,18 @@
 @font-face {
     font-family: 'lucida';
     src: url(fonts/lucida.ttf) format('truetype');
+}
+
+
+#bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    
 }
 
 body {
@@ -30,8 +42,8 @@ body {
     left: 1px;
     right: 1px;
     top: 1px;
-    background-color: #4CAF50;
-    backdrop-filter: blur(50px);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(30px);
     border-radius: 20px;
     color: white;
     padding: 10px 0;
@@ -39,4 +51,40 @@ body {
     margin: 10px;
     z-index: 1000;
     align-items: center;
+    padding: 12px;
+}
+
+#title {
+    font-size: 60px;
+    margin: 0;
+    font-family: 'cooperBlack';
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+#nav {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: 26px;
+    color: white;
+    gap: 15px;
+}
+
+#links{
+    color: white;
+    transition: 0.5s ease;
+    
+}
+
+#links:hover{
+    text-decoration: underline;
+    color: red;
+    transition: 0.5s ease;
+}
+
+a{
+    text-decoration: none;
+    width: fit-content;
 }
