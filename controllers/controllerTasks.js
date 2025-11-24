@@ -18,7 +18,7 @@ export async function addBill(req, res) {
     try {
         const novaTask = await modelTasks.criar(task);
         res.status(201).json(novaTask);
-        console.log
+        console.log(req.body);
     } catch (err) {
         res.status(500).json({ error: 'Erro ao criar a despesa' });
     }
