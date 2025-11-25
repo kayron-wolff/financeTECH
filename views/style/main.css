@@ -42,8 +42,8 @@ body {
     left: 1px;
     right: 1px;
     top: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(30px);
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     color: white;
     padding: 10px 0;
@@ -55,12 +55,21 @@ body {
 }
 
 #title {
-    font-size: 60px;
+    font-size: 50px;
     margin: 0;
     font-family: 'cooperBlack';
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     text-align: left;
+}
+
+#subti {
+    font-size: 33px;
+    font-family: 'harlowSolidItalic';
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0;
 }
 
 #nav {
