@@ -105,7 +105,8 @@ main {
 }
 
 #info {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
@@ -119,7 +120,8 @@ main {
     line-height: 1.6;
 }
 #features {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
     padding: 20px;
     border-radius: 10px;
 }
@@ -132,4 +134,29 @@ main {
     line-height: 1.6;
     list-style-type: disc;
     padding-left: 20px;
+}
+
+#donut_chart {
+    justify-content: center;
+    width: 900px;
+    height: 400px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#line_chart {
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
 }
