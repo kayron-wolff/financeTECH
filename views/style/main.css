@@ -1,19 +1,4 @@
-@font-face {
-    font-family: 'arialRoudedMTBold';
-    src: url(fonts/ARLRDBD.TTF) format('truetype');
-}
-@font-face {
-    font-family: 'cooperBlack';
-    src: url(fonts/COOPBL.TTF) format('truetype');
-}
-@font-face {
-    font-family: 'harlowSolidItalic';
-    src: url(fonts/HARLOWSI.TTF) format('truetype');
-}
-@font-face {
-    font-family: 'lucida';
-    src: url(fonts/lucida.ttf) format('truetype');
-}
+@import url('params.css');
 
 
 #bg-image {

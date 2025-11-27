@@ -50,7 +50,6 @@ async function drawChart2() {
 
     const response = await fetch('http://localhost:3000/home/main');
     const jsonData = await response.json();
-    console.log(jsonData);
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Fonte');
     data.addColumn('number', 'Renda');

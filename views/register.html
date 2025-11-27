@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ContáBill - Cadastro</title>
+  <link rel="stylesheet" href="style/reg.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="brand">
+      <h1>ContáBill</h1>
+    </header>
+
+    <main class="card">
+      <h2>Crie sua conta</h2>
+
+      <form action="#" method="post" novalidate>
+        <div class="field">
+          <label class="label" for="usuario">Nome de Usuário</label>
+          <input class="input" type="text" id="usuario" name="usuario" placeholder="Seu nome de usuário" required />
+        </div>
+
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <input class="input" type="email" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <label class="label" for="senha">Senha</label>
+          <input class="input" type="password" id="senha" name="senha" placeholder="••••••••" autocomplete="new-password" required />
+        </div>
+
+        <div class="field">
+          <label class="label" for="confirmar">Confirmar Senha</label>
+          <input class="input" type="password" id="confirmar" name="confirmar" placeholder="••••••••" autocomplete="new-password" required />
+        </div>
+
+        <div class="actions-top">
+          <a href="index.html" class="link">Cancelar</a>
+        </div>
+
+        <button class="btn" type="submit">Cadastrar</button>
+
+        <div class="actions-bottom">
+          <span>Já possui conta?</span>
+          <a href="login.html" class="link">Entre!</a>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

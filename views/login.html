@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ContáBill - Login</title>
+  <link rel="stylesheet" href="style/login.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="brand" aria-label="Título da aplicação">
+      <h1>ContáBill</h1>
+    </header>
+
+    <main class="card" role="form" aria-labelledby="login-title">
+      <h2 id="login-title">Entre na sua conta</h2>
+
+      <form action="#" method="post" novalidate>
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <input class="input" type="email" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required />
+        </div>
+
+        <div class="field">
+          <div class="sr-only" id="password-hint">Sua senha deve conter ao menos 8 caracteres.</div>
+          <label class="label" for="senha">Senha</label>
+          <input class="input" type="password" id="senha" name="senha" placeholder="••••••••" aria-describedby="password-hint" autocomplete="current-password" required />
+        </div>
+
+        <div class="actions-top">
+          <a href="#" class="link">Esqueceu Senha?</a>
+        </div>
+
+        <button class="btn" type="submit">Entrar</button>
+
+        <div class="actions-bottom">
+          <span>Não possui conta?</span>
+          <a href="register.html" class="link">Registre-se!</a>
+        </div>
+      </form>
+    </main>
+  </div>
+</body>
+</html>
