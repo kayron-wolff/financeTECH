@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
   <title>ContáBill - Login</title>
   <link rel="stylesheet" href="style/login.css" />
+  
 </head>
 <body>
   <div class="container">
@@ -15,16 +17,16 @@
     <main class="card" role="form" aria-labelledby="login-title">
       <h2 id="login-title">Entre na sua conta</h2>
 
-      <form action="#" method="post" novalidate>
+      <form id="log-in">
         <div class="field">
           <label class="label" for="email">Email</label>
-          <input class="input" type="email" id="email" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required />
+          <input class="input" type="email" id="logemail" name="email" placeholder="seuemail@exemplo.com" autocomplete="email" required />
         </div>
 
         <div class="field">
           <div class="sr-only" id="password-hint">Sua senha deve conter ao menos 8 caracteres.</div>
           <label class="label" for="senha">Senha</label>
-          <input class="input" type="password" id="senha" name="senha" placeholder="••••••••" aria-describedby="password-hint" autocomplete="current-password" required />
+          <input class="input" type="password" id="logsenha" name="senha" placeholder="••••••••" aria-describedby="password-hint" autocomplete="current-password" required />
         </div>
 
         <div class="actions-top">
@@ -40,5 +42,6 @@
       </form>
     </main>
   </div>
+  <script src="javascript/app.js"></script>
 </body>
 </html>

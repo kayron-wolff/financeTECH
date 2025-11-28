@@ -1,4 +1,5 @@
 import modelTasks from '../models/modelTasks.js';
+import bcrypt from 'bcrypt';
 
 export async function allBills(req, res) {
     //SELECT * FROM [..]
@@ -65,11 +66,48 @@ export async function getBillById(req, res) {
     }
 }
 
+export async function cadastarUsuario(req, res) {
+    const novoUsuario = req.body;
+    try {
+        const senhaHasheada = await bcrypt.hash(novoUsuario.passwd, 10);
+        novoUsuario.passwd = senhaHasheada
+        const usuarioCriado = await modelTasks.cadastarUsuario(novoUsuario);
+        res.status(201).json(usuarioCriado);
+    }catch (err) {
+        res.status(500).json({ error: 'Erro ao cadastrar o usuário' });
+    }
+}
+
+export async function loginUsuario(req, res) {
+    const { email, passwd } = req.body;
+    if (!email || !passwd) {
+        return res.status(400).json({ error: 'Email e senha são obrigatórios' });
+    }
+    try {
+        const usuario = await modelTasks.buscarUsuarioPorEmail(email);
+        if (!usuario) {
+            return res.status(404).json({ error: 'Usuário não encontrado' });
+        }
+        const senhaValida = await bcrypt.compare(passwd, usuario.passwd);
+        if (senhaValida) {
+            return res.status(200).json({ message: 'Login realizado com sucesso' });
+            
+        }else{
+            return res.status(401).json({ error: 'Senha incorreta' });
+        }
+    } catch (err) {
+        res.status(500).json({ error: 'Erro ao realizar o login' });
+    }
+}
+
+
 export default {
     allBills,
     addBill,
     updtBill,
     delBill,
-    getBillById
+    getBillById,
+    cadastarUsuario,
+    loginUsuario
 }
 

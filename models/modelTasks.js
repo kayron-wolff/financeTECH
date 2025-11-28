@@ -1,4 +1,5 @@
 import connection from '../database/connection.js';
+import bcrypt from 'bcrypt';
 
 class ModelTasks{
 
@@ -88,6 +89,39 @@ static async deletar(id){
         await con.end();
     }
 }
+
+static async cadastarUsuario(newUser){
+    const con = await connection();
+    try{
+        const sql = 'INSERT INTO users (usr_name, email, passwd) VALUES (?, ?, ?)';
+        const [resultado] = await con.execute(sql, [
+            newUser.usr_name,
+            newUser.email,
+            newUser.passwd
+        ]);
+        return {id: resultado.insertId, ...newUser};
+    }catch(err){
+        console.log('Erro ao cadastrar o usuário: ', err);
+    }finally{
+        await con.end();
+    }
 }
+
+static async buscarUsuarioPorEmail(email){
+    const con = await connection();
+    try{
+        const sql = 'SELECT * FROM users WHERE email = ?';
+        const [rows] = await con.execute(sql, [email]);
+        return rows[0];
+    }catch(err){
+        console.log('Erro ao buscar o usuário: ', err);
+        throw err;
+    }finally{
+        await con.end();
+    }
+}
+
+}
+
 
 export default ModelTasks;
