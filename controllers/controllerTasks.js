@@ -49,12 +49,12 @@ export async function delBill(req, res) {
     
 }
 
-export async function getBillById(req, res) {
+export async function getBillByName(req, res) {
     //SELECT * FROM [..]
-    const id = req.params.id;
+    const id = req.body.bill_name;
     try{
         
-        const task = await modelTasks.buscarPorId(id);
+        const task = await modelTasks.buscarPorNome(id);
         if(task.length === 0){
             res.status(404).json({message: 'Despesa não encontrada'});
         }else{
@@ -100,14 +100,72 @@ export async function loginUsuario(req, res) {
     }
 }
 
+export async function inserirEntrada(req, res) {
+    const novaEntrada = req.body;
+    try {
+        const entradaCriada = await modelTasks.inserirEntrada(novaEntrada);
+        res.status(201).json(entradaCriada);
+    } catch (err) {
+        res.status(500).json({ error: 'Erro ao inserir a entrada' });
+    }
+}
+
+export async function listarEntradas(req, res) {
+    try {
+        const entradas = await modelTasks.listarEntradas();
+        res.status(200).json(entradas);
+    } catch (err) {
+        res.status(500).json({ error: 'Erro ao obter as entradas' });
+    }
+}
+
+export async function getEntradaByName(req, res) {
+    const name = req.body.inc_name;
+    try{
+        const entrada = await modelTasks.buscarEntradaPorNome(name);
+        if(entrada.length === 0){
+            res.status(404).json({message: 'Entrada não encontrada'});
+        }else{
+            res.status(200).json(entrada[0]);
+        }
+    }catch(err){
+        res.status(500).json({error: 'Erro ao obter a entrada'});
+    }
+}
+
+export async function deletarEntrada(req, res) {
+    const id = req.params.id;
+    try{
+        await modelTasks.deletarEntrada(id);
+        res.status(200).json({ message: 'Entrada deletada com sucesso' });
+    } catch(err){
+        res.status(500).json({ error: 'Erro ao deletar a entrada' });
+    }
+}
+
+export async function atualizarEntrada(req, res) {
+    const id = req.params.id;
+    const dadosAtualizados = req.body;
+    try{
+        const entradaAtualizada = await modelTasks.atualizarEntrada(id, dadosAtualizados);
+        res.status(200).json(entradaAtualizada);
+    } catch(err){
+        res.status(500).json({ error: 'Erro ao atualizar a entrada' });
+    }
+}
 
 export default {
     allBills,
     addBill,
     updtBill,
     delBill,
-    getBillById,
+    getBillByName,
     cadastarUsuario,
-    loginUsuario
+    loginUsuario,
+    inserirEntrada,
+    listarEntradas,
+    getEntradaByName,
+    deletarEntrada,
+    atualizarEntrada
 }
 

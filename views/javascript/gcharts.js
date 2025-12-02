@@ -48,7 +48,7 @@ async function drawChart2() {
         
     };
 
-    const response = await fetch('http://localhost:5000/home/main');
+    const response = await fetch('http://localhost:3000/home/saida/list');
     const jsonData = await response.json();
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Fonte');

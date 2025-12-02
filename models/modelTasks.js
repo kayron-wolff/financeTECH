@@ -19,12 +19,12 @@ class ModelTasks{
         }
     }
 
-        static async buscarPorId(id){
+        static async buscarPorNome(name){
 
         const con = await connection();
         try{
-            const sql = 'SELECT * FROM billings WHERE bill_id = ?';
-            const [rows] = await con.execute(sql, [id]);
+            const sql = 'SELECT * FROM billings WHERE bill_name = ?';
+            const [rows] = await con.execute(sql, [name]);
             return rows;
         }catch(err){
             console.log('Erro ao buscar a despesa: ', err);
@@ -120,6 +120,84 @@ static async buscarUsuarioPorEmail(email){
         await con.end();
     }
 }
+
+static async inserirEntrada(newEntry){
+    const con = await connection();
+    try{
+        const sql = 'INSERT INTO income (inc_name, inc_desc, inc_date, inc_value, inc_type) VALUES (?, ?, ?, ?, ?)';
+        const [resultado] = await con.execute(sql, [
+            newEntry.inc_name,
+            newEntry.inc_date,
+            newEntry.inc_value,
+            newEntry.inc_type,
+            newEntry.inc_desc
+        ]);
+        return {id: resultado.insertId, ...newEntry};
+    }catch(err){
+        console.log('Erro ao inserir a entrada: ', err);
+    }finally{
+        await con.end();
+    }
+}
+
+static async listarEntradas(){
+    const con = await connection();
+    try{
+        const sql = 'SELECT * FROM income';
+        const [rows] = await con.execute(sql);
+        return rows;
+    }catch(err){
+        console.log('Erro ao listar as entradas: ', err);
+    }finally{
+        await con.end();
+    }
+}
+
+static async deletarEntrada(id){
+    const con = await connection();
+    try{
+        const sql = 'DELETE FROM income WHERE inc_id = ?';
+        await con.execute(sql, [id]);
+    }catch(err){
+        console.log('Erro ao deletar a entrada: ', err);
+    }finally{
+        await con.end();
+    }
+}
+
+static async atualizarEntrada(id, dadosAtualizados){
+    const con = await connection();
+    try{
+        const sql = 'UPDATE income SET inc_name = ?, inc_date = ?, inc_value = ?, inc_type = ?, inc_desc = ? WHERE inc_id = ?';
+        await con.execute(sql, [
+            dadosAtualizados.inc_name,
+            dadosAtualizados.inc_date,
+            dadosAtualizados.inc_value,
+            dadosAtualizados.inc_type,
+            dadosAtualizados.inc_desc,
+            id
+        ]);
+        return {id, ...dadosAtualizados};
+    }catch(err){
+        console.log('Erro ao atualizar a entrada: ', err);
+    }finally{
+        await con.end();
+    }
+}
+
+static async buscarEntradaPorNome(nome){
+    const con = await connection();
+    try{
+        const sql = 'SELECT * FROM income WHERE inc_name = ?';
+        const [rows] = await con.execute(sql, [nome]);
+        return rows;
+    }catch(err){
+        console.log('Erro ao buscar a entrada: ', err);
+    }finally{
+        await con.end();
+    }
+}
+
 
 }
 

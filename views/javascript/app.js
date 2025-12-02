@@ -61,7 +61,7 @@ async function login() {
     });
     if (response.ok) {
         alert('Login realizado com sucesso!');
-        window.location.href = 'index.html';
+        window.location.href = 'main.html';
     } else {
         const errorData = await response.json();
         alert('Erro ao realizar login: ' + errorData.error);

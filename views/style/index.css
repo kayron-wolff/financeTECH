@@ -1,0 +1,147 @@
+@import url('params.css');
+
+
+#bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'arialRoudedMTBold', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    position: fixed;
+    left: 1px;
+    right: 1px;
+    top: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin: 10px;
+    z-index: 1000;
+    align-items: center;
+    padding: 12px;
+}
+
+.title {
+    font-size: 50px;
+    margin: 0;
+    font-family: 'cooperBlack';
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: left;
+}
+
+#subti {
+    font-size: 33px;
+    font-family: 'harlowSolidItalic';
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin: 0;
+}
+
+#nav {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    font-size: 26px;
+    color: white;
+    gap: 15px;
+}
+
+#links{
+    color: white;
+    transition: 0.5s ease;
+    
+}
+
+#links:hover{
+    text-decoration: underline;
+    color: red;
+    transition: 0.5s ease;
+}
+
+a{
+    text-decoration: none;
+    width: fit-content;
+}
+
+main {
+    margin-top: 180px;
+    padding: 20px;
+    min-height: calc(100vh - 200px);
+}
+
+#info {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#info-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+#info-text {
+    font-size: 18px;
+    line-height: 1.6;
+}
+#features {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+}
+#features-title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+#features-list {
+    font-size: 18px;
+    line-height: 1.6;
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#donut_chart {
+    justify-content: center;
+    width: 900px;
+    height: 400px;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#line_chart {
+    justify-content: center;
+    width: fit-content;
+    margin: auto;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
