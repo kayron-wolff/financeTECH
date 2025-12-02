@@ -54,7 +54,7 @@ export async function getBillByName(req, res) {
     const id = req.body.bill_name;
     try{
         
-        const task = await modelTasks.buscarPorNome(id);
+        const task = await modelTasks.buscarPorNome(id.bill_name);
         if(task.length === 0){
             res.status(404).json({message: 'Despesa não encontrada'});
         }else{

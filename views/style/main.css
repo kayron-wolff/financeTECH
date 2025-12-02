@@ -1,2 +1,63 @@
 @import url(index.css);
 
+#mnav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 26px;
+    color: white;
+    gap: 12px;
+    justify-content: center;
+}
+
+.mlink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.mlink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.clink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.clink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.hlink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.hlink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.ulink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.ulink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
