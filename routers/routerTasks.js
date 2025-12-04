@@ -15,5 +15,6 @@ router.get('/entrada/list', controllerTasks.listarEntradas);
 router.post('/entrada/search/', controllerTasks.getEntradaByName);
 router.delete('/entrada/delete/:id', controllerTasks.deletarEntrada);
 router.put('/entrada/updt/:id', controllerTasks.atualizarEntrada);
+router.post('/usr/search', controllerTasks.getUserbyMail);
 
 export default router;

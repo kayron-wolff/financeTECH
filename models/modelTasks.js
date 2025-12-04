@@ -110,7 +110,7 @@ static async cadastarUsuario(newUser){
 static async buscarUsuarioPorEmail(email){
     const con = await connection();
     try{
-        const sql = 'SELECT * FROM users WHERE email = ?';
+        const sql = 'SELECT usr_name, passwd FROM users WHERE email = ?';
         const [rows] = await con.execute(sql, [email]);
         return rows[0];
     }catch(err){
@@ -127,10 +127,10 @@ static async inserirEntrada(newEntry){
         const sql = 'INSERT INTO income (inc_name, inc_desc, inc_date, inc_value, inc_type) VALUES (?, ?, ?, ?, ?)';
         const [resultado] = await con.execute(sql, [
             newEntry.inc_name,
+            newEntry.inc_desc,
             newEntry.inc_date,
             newEntry.inc_value,
-            newEntry.inc_type,
-            newEntry.inc_desc
+            newEntry.inc_type
         ]);
         return {id: resultado.insertId, ...newEntry};
     }catch(err){

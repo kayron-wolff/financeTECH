@@ -61,7 +61,10 @@ async function login() {
     });
     if (response.ok) {
         alert('Login realizado com sucesso!');
-        window.location.href = 'main.html';
+        localStorage.setItem('email', email);
+        
+
+        window.location.href = 'entrada.html';
     } else {
         const errorData = await response.json();
         alert('Erro ao realizar login: ' + errorData.error);
@@ -71,3 +74,39 @@ async function login() {
 
 }
 }
+
+/*const form = document.getElementById('form');
+if (form) {
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+        const email = document.getElementById('mail').value;
+        buscarUsuarioPorEmail(email); // Chama a função de busca
+    });
+    }
+
+function buscarUsuarioPorEmail(email) {
+fetch('http://localhost:3000/home/usr/search', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email: email })
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Erro ao buscar usuário: ' + response.statusText);
+    }
+    return response.json();
+},)
+.then(data => {
+    if (!data || Object.keys(data).length === 0) {
+        throw new Error('Usuário não encontrado');
+    }
+    // Aqui você pode fazer algo com os dados do usuário, como exibi-los na tela
+    //alert('Usuário encontrado: ' + JSON.stringify(data[0].usr_name) + '\nSenha: ' + JSON.stringify(data[0].passwd));
+    alert('Usuário encontrado: ' + data.usr_name + '\nSenha: ' + data.passwd);
+})
+.catch(error => {
+    console.error('Erro ao buscar usuário:', error);
+});
+}*/

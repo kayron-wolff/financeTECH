@@ -154,6 +154,19 @@ export async function atualizarEntrada(req, res) {
     }
 }
 
+    export async function getUserbyMail(req, res) {
+    const email = req.body.email;
+    try {
+        const usuario = await modelTasks.buscarUsuarioPorEmail(email);
+        if (!usuario) {
+            return res.status(404).json({ error: 'Usuário não encontrado' });
+        }
+        res.status(200).json(usuario);
+    } catch (err) {
+        res.status(500).json({ error: 'Erro ao buscar o usuário' });
+    }
+}
+
 export default {
     allBills,
     addBill,
@@ -166,6 +179,7 @@ export default {
     listarEntradas,
     getEntradaByName,
     deletarEntrada,
-    atualizarEntrada
+    atualizarEntrada,
+    getUserbyMail
 }
 
