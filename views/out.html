@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/out.css">
+    <script type="text/javascript" src="javascript/out.js" defer></script>
+    <title>ContaBill - Principal</title>
+</head>
+<body>
+    <div id="container">
+        <header class="header">
+        <h1 class="title">ContáBill</h1>
+        <nav id="mnav">
+            <a class="clink" href="charts.html">Dashboard</a>
+            <a href="entrada.html" class="mlink">Entradas</a>
+        </nav>
+        <div id="dpperfil"></div>
+    </header>
+    <main>
+        <section>
+            <div id="entrysection">
+                <h3>Saídas</h3>
+                <button id="btnaddentry">Adicionar +</button>
+            </div>
+            <div id="contententry"></div>
+            <div id="modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closemodal">&times;</span>
+                    <h3 id="modal-title"></h3>
+                    <form id="form">
+                        <label>Nome:</label>
+                        <input type="text" name="nome" id="nome"><br><br>
+                        <label>Descrição:</label>
+                        <input type="text" name="descricao" id="desc"><br><br>
+                        <label>Valor:</label>
+                        <input type="number" name="valor" step="0.01" id="value"><br><br>
+                        <label for="dataentry">Data da Saída:</label>
+                        <input type="date" id="dataentry" name="dataentry"><br><br>
+                        <label for="vencimento">Vencimento</label>
+                        <input type="date" id="vencimento" name="vencimento"><br><br>
+                        <label>Categoria:</label>
+                        <select name="tipo" id="tipo">
+                            <option value="Mensal">Mensal</option>
+                            <option value="Anual">Anual</option>
+                            <option value="Quinzenal">Quinzenal</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Diário">Diário</option>
+                            <option value="Avulso">Avulso</option>
+                            <option value="A cada 2 anos">A cada 2 anos</option>
+                            <option value="A cada 5 anos">A cada 5 anos</option>
+                        </select>
+                        <button type="submit">Salvar</button>
+                    </form>
+                </div>
+            </div>
+            
+                <div id="editmodal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="closemodal1">&times;</span>
+                    <h3 id="modal-title"></h3>
+                    <form id="form2">
+                        <label>Atualizar Nome:</label>
+                        <input type="text" name="nome" id="nome3"><br><br>
+                        <label>Atualizar Descrição:</label>
+                        <input type="text" name="descricao" id="desc3"><br><br>
+                        <label>Atualizar Valor:</label>
+                        <input type="number" name="valor" step="0.01" id="value3"><br><br>
+                        <label for="dataentry">Atualizar Data da Sáida:</label>
+                        <input type="date" id="datasaida2" name="dataentry"><br><br>
+                        <label for="vencimento">Atualizar Vencimento</label>
+                        <input type="date" id="vencimento2" name="vencimento"><br><br>
+                        <label>Atualizar Categoria:</label>
+                        <select name="tipo" id="tipo3">
+                            <option value="Mensal">Mensal</option>
+                            <option value="Anual">Anual</option>
+                            <option value="Quinzenal">Quinzenal</option>
+                            <option value="Semanal">Semanal</option>
+                            <option value="Diário">Diário</option>
+                            <option value="Avulso">Avulso</option>
+                        </select>
+                        <button type="submit">Atualizar</button>
+                    </form>
+                    
+                </div>
+
+            </div>
+        </section>
+    </main>
+    </div>
+    
+</body>
+</html>l

@@ -96,7 +96,7 @@ fetch('http://localhost:3000/home/entrada/list')
             <strong>Data:</strong> ${entry.inc_date}<br>
             <strong>Valor:</strong> R$ ${entry.inc_value}<br>
             <strong>Categoria:</strong> ${entry.inc_type}
-            <button id="btneditentry" data-id="${entry.inc_id}">Editar</button>
+            <button id="btneditentry${entry.inc_id}" data-id="${entry.inc_id}">Editar</button>
             <button id="btndeleteentry${entry.inc_id}" data-id="${entry.inc_id}">Excluir</button>
         </p>
         `;
@@ -121,9 +121,7 @@ fetch('http://localhost:3000/home/entrada/list')
             alert('Erro ao deletar entrada: ' + error.message);
         }
     });
-    });
-
-    const editButtons = document.getElementById('btneditentry');
+    const editButtons = document.getElementById(`btneditentry${entry.inc_id}`);
     editButtons.addEventListener('click', function() {
             const entryId = this.getAttribute('data-id');
             const modal2 = document.getElementById('editmodal');
@@ -138,10 +136,14 @@ fetch('http://localhost:3000/home/entrada/list')
                 const valor2 = parseFloat(document.getElementById('value2').value);
                 const tipo2 = document.getElementById('tipo2').value;
                 atualizarEntrada(entryId, nome2, descricao2, formattedDate2, valor2, tipo2);
+    });
+
+    
 
 
 })
-        }        );    });
+        }        );    
+    });
         
 
 function atualizarEntrada(entryId, nome2, descricao2, formattedDate2, valor2, tipo2) {
@@ -169,4 +171,12 @@ function atualizarEntrada(entryId, nome2, descricao2, formattedDate2, valor2, ti
     }).catch(error => {
         alert('Erro ao atualizar entrada: ' + error.message);
     });
+}
+
+const closeedit = document.getElementById('closemodal2');
+const modal2 = document.getElementById('editmodal')
+if(closeedit){
+    closeedit.addEventListener('click', function (){
+        modal2.style.display = 'none';
+    })
 }

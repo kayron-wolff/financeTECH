@@ -63,6 +63,19 @@ body {
     border-radius: 10px;
 }
 
+.out{
+    color: white;
+    transition: 0.5s ease;
+    
+}.out:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
 .ulink{
     color: white;
     transition: 0.5s ease;
@@ -109,7 +122,7 @@ body {
 
 }
 
-#closemodal:hover{
+#closemodal2:hover{
     cursor: pointer;
     color: white;
     font-size: 30px;
@@ -181,6 +194,21 @@ body {
     border-radius: 12px;
     font-size: 22px;
     font-family: 'lucida';
+}
+
+#entryinfo button{
+    padding: 8px;
+    color: white;
+    font-family: 'cooperBlack';
+    font-size: 12px;
+    background-color: #1d4ed8;
+    transition: 0.3s ease;
+    border: none;
+    border-radius: 10px;
+}
+
+#entryinfo button:hover{
+    background-color: #1e40af;
 }
 
 #btnaddentry{
@@ -267,3 +295,4 @@ body {
     color: white;
 
 }
+

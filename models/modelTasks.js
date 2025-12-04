@@ -36,15 +36,13 @@ class ModelTasks{
 static async criar(newBill){
     const con = await connection();
     try{
-        const sql = 'INSERT INTO billings (bill_name, bill_desc, bill_due_date, bill_start_date, bill_end_date, bill_value, bill_stats, bill_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+        const sql = 'INSERT INTO billings (bill_name, bill_desc, bill_due_date, bill_date, bill_value, bill_type) VALUES (?, ?, ?, ?, ?, ?)';
         const [resultado] = await con.execute(sql, [
             newBill.bill_name,
             newBill.bill_desc,
             newBill.bill_due_date,
-            newBill.bill_start_date,
-            newBill.bill_end_date,
+            newBill.bill_date,
             newBill.bill_value,
-            newBill.bill_stats,
             newBill.bill_type
         ]);
         return {id: resultado.insertId, ...newBill};
@@ -58,15 +56,14 @@ static async criar(newBill){
 static async atualizar(id, dadosAtualizados){
     const con = await connection();
     try{
-        const sql = 'UPDATE billings SET bill_name = ?, bill_desc = ?, bill_due_date = ?, bill_start_date = ?, bill_end_date = ?, bill_stats = ?, bill_type = ? WHERE bill_id = ?';
+        const sql = 'UPDATE billings SET bill_name = ?, bill_desc = ?, bill_due_date = ?, bill_date = ?, bill_type = ?, bill_value = ? WHERE bill_id = ?';
         await con.execute(sql, [
             dadosAtualizados.bill_name,
             dadosAtualizados.bill_desc,
             dadosAtualizados.bill_due_date,
-            dadosAtualizados.bill_start_date,
-            dadosAtualizados.bill_end_date,
-            dadosAtualizados.bill_stats,
+            dadosAtualizados.bill_date,
             dadosAtualizados.bill_type,
+            dadosAtualizados.bill_value,
             id
         ]);
         return {id, ...dadosAtualizados};

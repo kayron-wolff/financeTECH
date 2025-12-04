@@ -1,0 +1,312 @@
+@import url(index.css);
+@import url(params.css);
+
+body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        radial-gradient(1000px 500px at 20% 10%, #1d4ed8 0%, transparent 60%),
+        radial-gradient(800px 400px at 80% 90%, #9333ea 0%, transparent 60%),
+        #0f172a;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      font-family: 'cooperBlack';
+      padding: 24px;
+    }
+
+#mnav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 26px;
+    color: white;
+    gap: 12px;
+    justify-content: center;
+}
+
+.mlink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.mlink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.out{
+    color: white;
+    transition: 0.5s ease;
+    
+}.out:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.clink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.clink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.hlink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.hlink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.ulink{
+    color: white;
+    transition: 0.5s ease;
+    
+}.ulink:hover{
+    text-decoration: dotted underline;
+    color: red;
+    transition: 0.5s ease;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 12px;
+    border-radius: 10px;
+}
+
+#dpperfil{
+    text-align: right;
+    font-family: 'lucida';
+    font-size: 22px;
+}
+
+#entrysection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 10px;
+    font-family: 'harlowSolidItalic';
+    font-size: 36px;
+    color: white;
+}
+
+#modal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    flex-direction: column;
+    color: white;
+
+}
+
+#closemodal1:hover{
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    font-family: 'cooperBlack';
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s ease;
+}
+
+#modal input{
+    
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'lucida';
+    width: 480px;
+}
+
+#modal label{
+    display: flex;
+    font-family: 'lucida';
+    font-size: 20px;
+    justify-content: center;
+}
+
+#modal select{
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'lucida';
+    width: 374px;
+}
+
+#modal button{
+    margin-top: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: 'cooperBlack';
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#modal button:hover{
+    background-color: #1e40af;
+    transition: 0.3s ease;
+}
+
+#entryinfo{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 0.5fr));
+    gap: 16px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-family: 'lucida';
+}
+
+#btnaddentry{
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    font-family: 'cooperBlack';
+    background-color: #10b981;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#btnaddentry:hover{
+    background-color: #047857;
+    transition: 0.3s ease;
+}
+
+
+#editmodal input{
+    
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'lucida';
+    width: 480px;
+}
+
+#editmodal label{
+    display: flex;
+    font-family: 'lucida';
+    font-size: 20px;
+    justify-content: center;
+}
+
+#editmodal select{
+    margin: 10px;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-family: 'lucida';
+    width: 374px;
+}
+
+#editmodal button{
+    margin-top: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    font-family: 'cooperBlack';
+    background-color: #2563eb;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+#editmodal button:hover{
+    background-color: #1e40af;
+    transition: 0.3s ease;
+}
+
+#editmodal{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(12px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    flex-direction: column;
+    color: white;
+
+}
+
+#btneditentry{
+    padding: 20px;
+    color: white;
+    font-family: 'cooperBlack';
+    font-size: 18px;
+    background-color: #1d4ed8;
+    transition: 0.3s ease;
+}
+
+#btneditentry:hover{
+    background-color: #1e40af;
+    transition: 0.3s ease;
+}
+
+#entryinfo button{
+    padding: 8px;
+    color: white;
+    font-family: 'cooperBlack';
+    font-size: 12px;
+    background-color: #1d4ed8;
+    transition: 0.3s ease;
+    border: none;
+    border-radius: 10px;
+
+}
+
+#entryinfo button:hover{
+    background-color: #1e40af;
+}
