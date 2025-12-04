@@ -67,3 +67,16 @@
     padding: 12px;
     border-radius: 10px;
 }
+
+#graphs{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+}
+
+#column_chart{
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    width: fit-content;
+    border-radius: 20px;
+}

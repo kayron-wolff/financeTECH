@@ -8,7 +8,7 @@ google.charts.setOnLoadCallback(drawChart);
 
 
 function drawChart() {
-    drawChart1();
+   drawChart3();
     drawChart2();
 }
 
@@ -43,13 +43,14 @@ async function drawChart2() {
     var options = {
         title: 'Entradas',
         backgroundColor: 'transparent',
-        legend: { textStyle: { color: '#333', fontSize: 14 }, position: 'bottom' },
-        titleTextStyle: { color: '#333', fontSize: 22 },
+        legend: { textStyle: { color: '#fff', fontSize: 18 }, position: 'bottom' },
+        titleTextStyle: { color: '#fff', fontSize: 22 },
         width: 900,
         height: 600,
-        ColumnChart: { color: '#333', fontSize: 16, bold: true },
-        vAxis: { title: 'Renda (R$)', titleTextStyle: { color: '#333', fontSize: 16 } },
-        hAxis: { title: 'Fonte', titleTextStyle: { color: '#333', fontSize: 16 } },
+        columnTextStyle: {color: 'fff'},
+        ColumnChart: { color: '#fff', fontSize: 16, bold: true },
+        vAxis: { title: 'Renda (R$)', titleTextStyle: { color: '#fff'}, textStyle: { color: '#fff', fontSize: 16 } },
+        hAxis: { title: 'Fonte', titleTextStyle: {color: '#fff'}, textStyle: { color: '#fff', fontSize: 16 } },
 
         
     };
@@ -63,6 +64,32 @@ async function drawChart2() {
         data.addRow([String(item.inc_name), parseFloat(item.inc_value)]);
     });
 
-    var chart = new google.visualization.ColumnChart(document.getElementById('line_chart'));
+    var chart = new google.visualization.ColumnChart(document.getElementById('column_chart'));
+    chart.draw(data, options);
+}
+
+async function drawChart3() {
+    var options = {
+        title: 'Saídas',
+        backgroundColor: 'transparent',
+        legend: { textStyle: { color: '#fff', fontSize: 18 }, position: 'bottom' },
+        titleTextStyle: { color: '#fff', fontSize: 22 },
+        width: 900,
+        height: 600,
+        pieSliceText: 'percentage'
+
+        
+    };
+
+    const response = await fetch('http://localhost:3000/home/saida/list');
+    const jsonData = await response.json();
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Saída');
+    data.addColumn('number', 'Porcentagem');
+    jsonData.forEach(item => {
+        data.addRow([String(item.bill_name), parseFloat(item.bill_value)]);
+    });
+
+    var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
     chart.draw(data, options);
 }
